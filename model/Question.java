@@ -29,6 +29,8 @@ public class Question {
 		return response.equalsIgnoreCase(answer);
 	}
 
-	
+	public void diplay(){
+		System.out.println(text);
+	}
 	
 }
