@@ -10,9 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
-
-
+import controller.QuestionButtonListener;
 
 
 public class QuestionPanel {
@@ -52,10 +50,42 @@ public class QuestionPanel {
 		canvas = new QuestionCanvas(this); //We pass this panel 
 		cp.add(BorderLayout.CENTER, canvas);
 
-
-
-
+		QuestionButtonListener listener = new QuestionButtonListener(this);
+		nextButton.addActionListener(listener);
+		prevButton.addActionListener(listener);
+		quitButton.addActionListener(listener);
+		enterButton.addActionListener(listener);
 
 	}
+
+	public JButton getNexButton(){
+		return nextButton;
+	}
+
+	public JButton getPrevButton(){
+		return prevButton;
+	}
+
+	public JButton getQuitButton(){
+		return quitButton;
+	}
+
+	public JButton getEnterButton(){
+		return enterButton;
+	}
+
+	public JTextField getAnswerField(){
+		return answerField;
+	}
+
+	public JFrame getWindow(){
+		return window;
+	}
+
+	public QuestionCanvas getCanvas(){
+		return canvas;
+	}
+
+
 	
 }
