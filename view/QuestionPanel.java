@@ -23,6 +23,7 @@ public class QuestionPanel {
 
 	private JButton enterButton = new JButton("Enter");
 	private JTextField answerField = new JTextField(20);
+	private QuestionCanvas canvas;
 
 	public QuestionPanel(JFrame window){
 		this.window = window;
@@ -46,6 +47,10 @@ public class QuestionPanel {
 		south2.add(nextButton);
 		south2.add(quitButton);
 		southPanel.add(south2);
+
+		//Here we create canvas
+		canvas = new QuestionCanvas(this); //We pass this panel 
+		cp.add(BorderLayout.CENTER, canvas);
 
 
 

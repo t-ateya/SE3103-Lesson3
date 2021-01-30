@@ -1,4 +1,7 @@
 package model;
+import java.awt.Graphics2D;
+import java.awt.Color;
+import java.awt.Font;
 
 public class Question {
 	private String text; //Question
@@ -31,6 +34,12 @@ public class Question {
 
 	public void diplay(){
 		System.out.println(text);
+	}
+
+	public void render(Graphics2D g2){
+		g2.setColor(Color.yellow);
+		g2.setFont(new Font("Courier", Font.BOLD, 14));
+		g2.drawString(text, 50, 100); //location, x =50, y =100
 	}
 	
 }
