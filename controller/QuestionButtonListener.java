@@ -2,6 +2,7 @@ package controller;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import model.QuestionBank;
 import view.MenuScreen;
@@ -43,6 +44,22 @@ public class QuestionButtonListener implements ActionListener {
 			}
 			panel.getCanvas().setQuestionIndex(index);
 			panel.getCanvas().repaint();
+
+		}else if (button == panel.getEnterButton()){
+			int index = panel.getCanvas().getQuestionIndex(); // we get the ques via its index
+			if (index < 0){
+				JOptionPane.showMessageDialog(panel.getWindow(), "No question presented yet");
+				return ;
+			}
+			String response = panel.getAnswerField().getText();
+			String message;
+			if (QuestionBank.database.get(index).checkAnswer(response)){
+				message = response + ": Correct answer!";
+			}else {
+				message = response + ": Wrong answer!";
+			}
+			JOptionPane.showMessageDialog(panel.getWindow(), message);
+			panel.getAnswerField().setText(""); //TO CLEAR screen for next text
 		}
 
 	}
