@@ -23,7 +23,7 @@ public class Rectangle extends Shape {
 
 	@Override
 	public float getArea() {
-		return width*width;
+		return getHeight()*getWidth();
 	}
 
 	@Override

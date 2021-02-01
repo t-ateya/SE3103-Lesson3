@@ -6,7 +6,8 @@
 	"configurations": [
 		{
 			"type": "java",
-			"name": "Launch ShapeTest",
+			"name": "ShapeTest",
+			"vmArgs": "-ea",
 			"request": "launch",
 			"mainClass": "test.ShapeTest",
 			"projectName": "Lesson3_fc39b28d"
