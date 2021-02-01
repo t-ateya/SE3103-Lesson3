@@ -34,5 +34,9 @@ public class ShapeCanvas extends JPanel {
 			s.render(g2);
 		}
 	}
+
+	public ArrayList<Shape>getShapes(){
+		return shapes;
+	}
 	
 }

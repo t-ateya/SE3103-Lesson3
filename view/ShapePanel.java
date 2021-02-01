@@ -12,6 +12,8 @@ import controller.ShapeEventListener;
 public class ShapePanel {
 	private JFrame window;
 	private ShapeCanvas canvas;
+	private JButton randonShapeButton;
+	private JButton exitButton;
 
 	public ShapePanel(JFrame window){
 		this.window = window;
@@ -22,10 +24,10 @@ public class ShapePanel {
 		JPanel southPanel = new JPanel();
 		cp.add(BorderLayout.SOUTH, southPanel);
 
-		JButton randonShapeButton = new JButton("Random Shapes");
-		JButton exiButton = new JButton("Exit");
+		randonShapeButton = new JButton("Random Shapes");
+		exitButton = new JButton("Exit");
 		southPanel.add(randonShapeButton);
-		southPanel.add(exiButton);
+		southPanel.add(exitButton);
 
 		//canvas
 		canvas = new ShapeCanvas(this);
@@ -34,13 +36,24 @@ public class ShapePanel {
 		//event Listener
 		ShapeEventListener listener = new ShapeEventListener(this);
 		randonShapeButton.addActionListener(listener);
-		exiButton.addActionListener(listener);
+		exitButton.addActionListener(listener);
 
-		
+	}
+
+	public JButton getRandomShapeButton(){
+		return randonShapeButton;
+	}
+
+	public JButton getExitButton(){
+		return exitButton;
 	}
 
 	public ShapeCanvas getCanvas(){
 		return canvas;
+	}
+
+	public JFrame getWindow(){
+		return window;
 	}
 	
 }
